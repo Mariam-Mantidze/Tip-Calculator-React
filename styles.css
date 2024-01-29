@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +10,12 @@ body {
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
+  font-family: "Space Mono", sans-serif;
+}
+
+button,
+input {
+  font-family: "Space Mono", sans-serif;
 }
 
 /* main {
@@ -36,6 +44,7 @@ header {
 #inputs {
   border-radius: 25px;
 }
+
 #results {
   border-radius: 15px;
   background: #00474b;
@@ -49,6 +58,16 @@ header {
 
 .input-wrapper {
   position: relative;
+  margin-top: 6px;
+}
+
+label,
+.button-title {
+  color: #5e7a7d;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
 .amounts input {
@@ -58,6 +77,15 @@ header {
   height: 48px;
   padding: 6px 17px;
   width: 100%;
+}
+input[type="number"] {
+  color: #00474b;
+  text-align: right;
+  font-family: "Space Mono";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 .amounts .icon {
   position: absolute;
@@ -69,16 +97,51 @@ header {
 }
 
 .second {
-  top: 32px;
+  top: 37px;
   left: 17px;
 }
 
+.buttons-section {
+  margin-top: 32px;
+}
+
 .buttons {
-  width: 170px;
-  margin: 20px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
 }
 
 .buttons button,
 #custom-tip {
-  width: 50px;
+  padding: 6px 17px;
+  border: none;
+  border-radius: 5px;
+  background: #00474b;
+
+  /* text */
+  color: #fff;
+  font-size: 24px;
+}
+
+#custom-tip {
+  width: 100%;
+
+  background: #f3f9fa;
+  color: #547878;
+}
+#custom-tip::placeholder {
+  color: #547878;
+  text-align: right;
+  font-size: 24px;
+  font-style: normal;
+
+  line-height: normal;
+}
+
+.people {
+  margin-top: 32px;
 }
