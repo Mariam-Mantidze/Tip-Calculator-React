@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* main {
+  background: #c5e4e7;
+} */
+
+header {
+  display: flex;
+  justify-content: center;
+  background: #c5e4e7;
+  padding: 50px 0 40px 0;
+}
+
+#card {
+  background: #fff;
+  box-shadow: 0px 32px 43px 0px rgba(79, 166, 175, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px;
+}
+.numerical {
+  text-align: right;
+}
+
+#inputs {
+  border-radius: 25px;
+}
+#results {
+  border-radius: 15px;
+  background: #00474b;
+  width: 327px;
+}
+
+.amounts {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.amounts input {
+  border-radius: 5px;
+  background: #f3f9fa;
+  border: none;
+  height: 48px;
+  padding: 6px 17px;
+  width: 100%;
+}
+.amounts .icon {
+  position: absolute;
+}
+
+.first {
+  top: 15px;
+  left: 19px;
+}
+
+.second {
+  top: 32px;
+  left: 17px;
+}
+
+.buttons {
+  width: 170px;
+  margin: 20px 0;
+}
+
+.buttons button,
+#custom-tip {
+  width: 50px;
+}
