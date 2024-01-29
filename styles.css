@@ -33,6 +33,7 @@ header {
   background: #fff;
   box-shadow: 0px 32px 43px 0px rgba(79, 166, 175, 0.2);
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 32px;
   padding: 32px;
@@ -43,6 +44,7 @@ header {
 
 #inputs {
   border-radius: 25px;
+  width: 100%;
 }
 
 .amounts {
@@ -105,7 +107,7 @@ input[type="number"] {
   margin-top: 16px;
 }
 
-.buttons button,
+.buttons .tip,
 #custom-tip {
   padding: 6px 17px;
   border: none;
@@ -115,6 +117,14 @@ input[type="number"] {
   /* text */
   color: #fff;
   font-size: 24px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tip:hover {
+  background: #9fe8df;
+  color: #00474b;
+  transition: 0.3s;
 }
 
 #custom-tip {
@@ -136,7 +146,7 @@ input[type="number"] {
 #results {
   border-radius: 15px;
   background: #00474b;
-  width: 327px;
+  width: 100%;
   padding: 39px 22px 24px 24px;
 }
 #reset {
@@ -150,6 +160,13 @@ input[type="number"] {
   background: #26c2ae;
   border: none;
   margin-top: 33px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#reset:hover {
+  background: #9fe8df;
+  transition: 0.3s;
 }
 
 .section-wrapper {
