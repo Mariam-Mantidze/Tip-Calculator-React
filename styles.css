@@ -121,7 +121,7 @@ input[type="number"] {
   transition: 0.2s;
 }
 
-.tip:hover {
+.buttons .clicked {
   background: #9fe8df;
   color: #00474b;
   transition: 0.2s;
@@ -257,7 +257,7 @@ input[type="number"] {
   }
 
   #custom-tip {
-    padding: 6px 13px;
+    padding: 6px 1px;
   }
   #custom-tip::placeholder {
     text-align: center;
