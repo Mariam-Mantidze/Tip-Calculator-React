@@ -81,16 +81,8 @@ input[type="number"] {
 }
 .amounts .icon {
   position: absolute;
-}
-
-.first {
   top: 15px;
   left: 19px;
-}
-
-.second {
-  top: 37px;
-  left: 17px;
 }
 
 .buttons-section {
@@ -118,13 +110,13 @@ input[type="number"] {
   color: #fff;
   font-size: 24px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 .tip:hover {
   background: #9fe8df;
   color: #00474b;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 #custom-tip {
@@ -196,4 +188,71 @@ input[type="number"] {
   font-size: 32px;
   font-weight: 700;
   letter-spacing: -0.667px;
+}
+
+@media (min-width: 1000px) {
+  body {
+    background-color: #c5e4e7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 87px;
+  }
+  header {
+    padding: 0;
+  }
+
+  #card {
+    padding: 0;
+    flex-direction: row;
+    border-radius: 20px;
+    gap: 48px;
+    width: 920px;
+  }
+
+  #inputs {
+    margin: 45px 0 48px 48px;
+  }
+
+  .buttons-section {
+    margin-top: 40px;
+  }
+
+  .buttons {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+  }
+  .buttons .tip,
+  #custom-tip {
+    width: 117px;
+    height: 48px;
+  }
+
+  .people {
+    margin-top: 40px;
+  }
+
+  .amounts input::placeholder {
+    opacity: 35%;
+  }
+
+  #results {
+    padding: 40px;
+    margin: 32px 32px 32px 0;
+  }
+  .second-wrapper {
+    margin-top: 25px;
+  }
+
+  #results #result-tip,
+  #results #result-total {
+    font-size: 48px;
+    line-height: 71px;
+    letter-spacing: -1px;
+    text-align: right;
+  }
+  #reset {
+    margin-top: 122px;
+  }
 }
