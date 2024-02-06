@@ -7,6 +7,7 @@
 }
 
 body {
+  background-color: #c5e4e7;
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
@@ -38,6 +39,8 @@ header {
 }
 
 #card {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   background: #fff;
   box-shadow: 0px 32px 43px 0px rgba(79, 166, 175, 0.2);
   display: flex;
@@ -80,6 +83,12 @@ label,
   padding: 6px 17px;
   width: 100%;
 }
+
+.amounts input:focus {
+  outline: none;
+  border: 2px solid #26c2ae;
+}
+
 input[type="number"] {
   color: #00474b;
   text-align: right;
@@ -130,7 +139,11 @@ input[type="number"] {
 #custom-tip {
   width: 100%;
   background: #f3f9fa;
-  color: #547878;
+  color: #00474b;
+}
+#custom-tip:focus {
+  outline: none;
+  border: 2px solid #26c2ae;
 }
 
 #custom-tip::placeholder {
@@ -162,6 +175,11 @@ input[type="number"] {
   margin-top: 33px;
   cursor: pointer;
   transition: 0.3s;
+}
+
+#reset .disabled {
+  background-color: #0d686d;
+  color: #00474b;
 }
 
 #reset:hover {
@@ -200,7 +218,6 @@ input[type="number"] {
 
 @media (min-width: 1000px) {
   body {
-    background-color: #c5e4e7;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -257,7 +274,7 @@ input[type="number"] {
   }
 
   #custom-tip {
-    padding: 6px 1px;
+    padding: 6px 10px;
   }
   #custom-tip::placeholder {
     text-align: center;

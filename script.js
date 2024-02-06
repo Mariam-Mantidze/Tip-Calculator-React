@@ -6,13 +6,26 @@ document.addEventListener("DOMContentLoaded", function () {
   const resultTotal = document.getElementById("result-total");
   const customTipInput = document.getElementById("custom-tip");
   const resetButtton = document.getElementById("reset");
+  const errorMessage = Array.from(
+    document.getElementsByClassName("error-message")
+  );
 
   let billValue = 0;
   let tipValue = 0;
   let peopleValue = 0;
 
+  function checkNumberValidity(value, input) {
+    const regex = /^\d+$/;
+    if (value === 0 || value < 0) {
+      input.style.border = "2px solid #E17052";
+    } else {
+      input.style.border = "";
+    }
+  }
+
   billInput.addEventListener("input", (event) => {
     billValue = Number(event.target.value);
+    checkNumberValidity(billValue, billInput);
     calculation();
   });
 
@@ -25,12 +38,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   tipInputs.forEach((button) => {
     button.addEventListener("click", (event) => {
-      event.stopImmediatePropagation();
-      removeClickedClassFromAllButtons();
-      button.classList.add("clicked");
-
-      tipValue = parseInt(event.target.innerText);
-      customTipInput.value = "";
+      if (button.classList.contains("clicked")) {
+        button.classList.remove("clicked");
+        tipValue = "";
+      } else {
+        // event.stopImmediatePropagation();
+        removeClickedClassFromAllButtons();
+        button.classList.add("clicked");
+        tipValue = parseInt(event.target.innerText);
+        customTipInput.value = "";
+      }
 
       calculation();
     });
