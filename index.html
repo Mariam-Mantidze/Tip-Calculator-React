@@ -23,7 +23,11 @@
       <div id="card">
         <section id="inputs">
           <div class="amounts">
-            <label for="bill">Bill</label>
+            <div class="flex-grp">
+              <label for="bill">Bill</label>
+              <span class="error" id="bill-error"></span>
+            </div>
+
             <div class="input-wrapper">
               <input
                 class="numerical"
@@ -63,7 +67,11 @@
           </div>
 
           <div class="amounts people">
-            <label for="people">Number of people</label>
+            <div class="flex-grp">
+              <label for="people">Number of people</label>
+              <span class="error" id="people-error"></span>
+            </div>
+
             <div class="input-wrapper">
               <input
                 placeholder="0"

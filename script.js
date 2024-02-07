@@ -6,36 +6,55 @@ document.addEventListener("DOMContentLoaded", function () {
   const resultTotal = document.getElementById("result-total");
   const customTipInput = document.getElementById("custom-tip");
   const resetButtton = document.getElementById("reset");
-  const errorMessage = Array.from(
-    document.getElementsByClassName("error-message")
-  );
+  const billError = document.getElementById("bill-error");
+  const peopleError = document.getElementById("people-error");
 
   let billValue = 0;
   let tipValue = 0;
   let peopleValue = 0;
 
-  function checkNumberValidity(value, input) {
-    const regex = /^\d+$/;
-    if (value === 0 || value < 0) {
+  // function for checking invalid number
+  function checkNumberValidity(value, input, error) {
+    if (value < 1) {
       input.style.border = "2px solid #E17052";
+      error.innerText = "Can't be zero";
     } else {
       input.style.border = "";
+      error.innerText = "";
     }
   }
-
+  // BILL INPUT //
   billInput.addEventListener("input", (event) => {
     billValue = Number(event.target.value);
-    checkNumberValidity(billValue, billInput);
+    checkNumberValidity(billValue, billInput, billError);
     calculation();
   });
 
-  // Function to remove 'clicked' class from all buttons
-  function removeClickedClassFromAllButtons() {
+  // PEOPLE INPUT //
+  peopleInput.addEventListener("input", (event) => {
+    peopleValue = Number(event.target.value);
+    checkNumberValidity(peopleValue, peopleInput, peopleError);
+    calculation();
+  });
+
+  // CUSTOM INPUT //
+  customTipInput.addEventListener("input", (event) => {
+    tipValue = Number(event.target.value);
+    if (tipValue < 1) {
+      customTipInput.style.border = "2px solid #E17457";
+    } else {
+      customTipInput.style.border = "";
+    }
+    calculation();
+  });
+
+  customTipInput.addEventListener("click", (event) => {
     tipInputs.forEach((button) => {
       button.classList.remove("clicked");
     });
-  }
+  });
 
+  // TIP BUTTONS
   tipInputs.forEach((button) => {
     button.addEventListener("click", (event) => {
       if (button.classList.contains("clicked")) {
@@ -48,21 +67,18 @@ document.addEventListener("DOMContentLoaded", function () {
         tipValue = parseInt(event.target.innerText);
         customTipInput.value = "";
       }
-
       calculation();
     });
   });
 
-  peopleInput.addEventListener("input", (event) => {
-    peopleValue = Number(event.target.value);
-    calculation();
-  });
+  // Function to remove 'clicked' class from all buttons
+  function removeClickedClassFromAllButtons() {
+    tipInputs.forEach((button) => {
+      button.classList.remove("clicked");
+    });
+  }
 
-  customTipInput.addEventListener("input", (event) => {
-    tipValue = Number(event.target.value);
-    calculation();
-  });
-
+  //  CALCULATING TOTALS
   function calculation() {
     if (peopleValue != 0) {
       // tip per person

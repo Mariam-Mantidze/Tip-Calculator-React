@@ -62,6 +62,18 @@ header {
   display: flex;
   flex-direction: column;
 }
+.flex-grp {
+  display: flex;
+  justify-content: space-between;
+}
+.error {
+  color: #e17457;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: right;
+}
 
 .input-wrapper {
   position: relative;
