@@ -97,8 +97,7 @@ label,
 }
 
 .amounts input:focus {
-  outline: none;
-  border: 2px solid #26c2ae;
+  outline: 2px solid #26c2ae;
 }
 
 input[type="number"] {
@@ -141,6 +140,9 @@ input[type="number"] {
   cursor: pointer;
   transition: 0.2s;
 }
+#custom-tip {
+  transition: none;
+}
 
 .buttons .clicked {
   background: #9fe8df;
@@ -154,8 +156,7 @@ input[type="number"] {
   color: #00474b;
 }
 #custom-tip:focus {
-  outline: none;
-  border: 2px solid #26c2ae;
+  outline: 2px solid #26c2ae;
 }
 
 #custom-tip::placeholder {

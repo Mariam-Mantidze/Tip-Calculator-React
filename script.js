@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const billInput = document.getElementById("bill");
   const tipInputs = Array.from(document.querySelectorAll(".tip"));
   const peopleInput = document.getElementById("people");
-  const resultTip = document.getElementById("result-tip");
-  const resultTotal = document.getElementById("result-total");
+  let resultTip = document.getElementById("result-tip");
+  let resultTotal = document.getElementById("result-total");
   const customTipInput = document.getElementById("custom-tip");
   const resetButtton = document.getElementById("reset");
   const billError = document.getElementById("bill-error");
@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // function for checking invalid number
   function checkNumberValidity(value, input, error) {
     if (value < 1) {
-      input.style.border = "2px solid #E17052";
+      input.style.outline = "2px solid #E17052";
       error.innerText = "Can't be zero";
     } else {
-      input.style.border = "";
+      input.style.outline = "";
       error.innerText = "";
     }
   }
@@ -41,16 +41,18 @@ document.addEventListener("DOMContentLoaded", function () {
   customTipInput.addEventListener("input", (event) => {
     tipValue = Number(event.target.value);
     if (tipValue < 1) {
-      customTipInput.style.border = "2px solid #E17457";
+      customTipInput.style.outline = "2px solid #E17457";
+      // customTipInput.value = "";
     } else {
-      customTipInput.style.border = "";
+      customTipInput.style.outline = "";
     }
     calculation();
   });
 
-  customTipInput.addEventListener("click", (event) => {
+  customTipInput.addEventListener("click", () => {
     tipInputs.forEach((button) => {
       button.classList.remove("clicked");
+      customTipInput.style.outline = "";
     });
   });
 
@@ -66,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
         button.classList.add("clicked");
         tipValue = parseInt(event.target.innerText);
         customTipInput.value = "";
+        customTipInput.style.outline = "none";
       }
       calculation();
     });
@@ -80,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //  CALCULATING TOTALS
   function calculation() {
-    if (peopleValue != 0) {
+    if (peopleValue != 0 && billValue > 0 && tipValue > 0) {
       // tip per person
       let tipResultValue = (billValue * (tipValue / 100)) / peopleValue;
 
