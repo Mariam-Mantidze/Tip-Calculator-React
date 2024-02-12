@@ -2,10 +2,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const billInput = document.getElementById("bill");
   const tipInputs = Array.from(document.querySelectorAll(".tip"));
   const peopleInput = document.getElementById("people");
+  const customTipInput = document.getElementById("custom-tip");
+
   let resultTip = document.getElementById("result-tip");
   let resultTotal = document.getElementById("result-total");
-  const customTipInput = document.getElementById("custom-tip");
   const resetButtton = document.getElementById("reset");
+
   const billError = document.getElementById("bill-error");
   const peopleError = document.getElementById("people-error");
 
@@ -83,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //  CALCULATING TOTALS
   function calculation() {
-    if (peopleValue != 0 && billValue > 0 && tipValue > 0) {
+    if (peopleValue > 0 && billValue > 0 && tipValue > 0) {
       // tip per person
       let tipResultValue = (billValue * (tipValue / 100)) / peopleValue;
 

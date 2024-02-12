@@ -1,6 +1,6 @@
 # Tip Calculator App
 
-The Tip Calculator is a simple, user-friendly web application designed to help users easily calculate the tip amount and total cost per person for any bill. This project is built using HTML, CSS, and JavaScript, focusing on event listeners and DOM manipulation to create an interactive user experience.
+- The Tip Calculator is a simple, user-friendly web application designed to help users easily calculate the tip amount and total cost per person for any bill. This project is built using HTML, CSS, and JavaScript, focusing on event listeners and DOM manipulation to create an interactive user experience.
 
 ## Features
 
@@ -12,7 +12,7 @@ The Tip Calculator is a simple, user-friendly web application designed to help u
 
 ## How It Works
 
-The application calculates the tip amount per person and the total amount per person based on the bill value, the tip percentage, and the number of people sharing the bill. Users can choose from predefined tip percentages or enter a custom value. The app validates input to ensure that values are not zero or negative, providing feedback to users for invalid inputs.
+- The application calculates the tip amount per person and the total amount per person based on the bill value, the tip percentage, and the number of people sharing the bill. Users can choose from predefined tip percentages or enter a custom value. The app validates input to ensure that values are not zero or negative, providing feedback to users for invalid inputs.
 
 ## Project Structure
 
