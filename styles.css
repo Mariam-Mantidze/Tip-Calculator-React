@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
 
 * {
   margin: 0;
@@ -19,17 +19,12 @@ input {
   font-family: "Space Mono", sans-serif;
 }
 
-/* Hide spinners for number inputs */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   appearance: none;
-  margin: 0; /* for Firefox */
+  margin: 0;
 }
-
-/* main {
-  background: #c5e4e7;
-} */
 
 header {
   display: flex;
@@ -121,7 +116,7 @@ input[type="number"] {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  /* justify-content: center; */
+
   align-items: center;
   gap: 16px;
   margin-top: 16px;
@@ -134,7 +129,6 @@ input[type="number"] {
   border-radius: 5px;
   background: #00474b;
 
-  /* text */
   color: #fff;
   font-size: 24px;
   cursor: pointer;
@@ -296,4 +290,4 @@ input[type="number"] {
   #reset {
     margin-top: 122px;
   }
-}
+} */
