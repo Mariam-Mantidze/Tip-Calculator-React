@@ -17,10 +17,10 @@ export default function InputSide() {
         <Label htmlFor="">Select Tip%</Label>
         <ButtonContainer>
           {btnsArr.map((btn, index) => (
-            <button key={index}>{btn}</button>
+            <Button key={index}>{btn}</Button>
           ))}
 
-          <input type="number" placeholder="0" />
+          <Input btnType="custom" type="number" placeholder="Custom" />
         </ButtonContainer>
       </InputContainer>
 
@@ -41,7 +41,7 @@ const Form = styled.form`
 
 const Label = styled.label`
   font-weight: 700;
-  margin-bottom: 16px;
+
   color: rgba(94, 122, 125, 1);
 `;
 
@@ -82,8 +82,18 @@ const Input = styled.input`
 
 const ButtonContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr) 118px;
   gap: 14px;
+  margin-top: 10px;
+`;
 
-  align-items: center;
+const Button = styled.button`
+  padding: 6px 17px;
+  border: none;
+  border-radius: 5px;
+  background: #00474b;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  transition: 0.2s;
 `;
